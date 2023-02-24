@@ -1,0 +1,28 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.8'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//	localhost:8080/swagger-ui/index.html#/stocks-controller
+// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.7.8'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.14'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
